@@ -1,0 +1,49 @@
+<!--
+  Generated template for the InfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>info</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides pager>
+        <ion-slide *ngFor="let imagen of casa.ad.images">
+          <img src= 'https://img.segundamano.mx/medium/{{imagen.path}}'>
+        </ion-slide>
+  </ion-slides>
+  <ion-card>
+        <ion-card-header>
+          
+           {{casa.ad.subject}}
+             
+        </ion-card-header>
+        <ion-card-content *ngIf="casa.ad.hasOwnProperty('body')">
+          {{casa.ad.body}}
+        </ion-card-content>
+  </ion-card>
+  <ion-card>
+      <ion-card-content *ngIf="casa.ad.ad_details.hasOwnProperty('lot_area')">
+        <p *ngIf="casa.ad.ad_details.lot_area.hasOwnProperty('single')">
+            {{casa.ad.ad_details.lot_area.single.label}}
+        </p>
+      </ion-card-content>
+  </ion-card>
+  <ion-card>
+      <ion-card-content *ngIf="casa.ad.ad_details.hasOwnProperty('bathrooms')">
+        <p *ngIf="casa.ad.ad_details.bathrooms.hasOwnProperty('single')">
+            {{casa.ad.ad_details.bathrooms.single.label}}
+        </p>
+      </ion-card-content>
+  </ion-card>
+  <ion-card>
+      <ion-card-content *ngIf="casa.ad.hasOwnProperty('list_price')">
+          {{ casa.ad.list_price.label }}
+      </ion-card-content>
+  </ion-card>
+ 
+</ion-content>
