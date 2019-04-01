@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>info</ion-title>
+    <ion-title>Info</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -28,6 +28,7 @@
   </ion-card>
   <ion-card>
       <ion-card-content *ngIf="casa.ad.ad_details.hasOwnProperty('lot_area')">
+        <h2>Metros cuadrados:</h2>
         <p *ngIf="casa.ad.ad_details.lot_area.hasOwnProperty('single')">
             {{casa.ad.ad_details.lot_area.single.label}}
         </p>
@@ -35,6 +36,7 @@
   </ion-card>
   <ion-card>
       <ion-card-content *ngIf="casa.ad.ad_details.hasOwnProperty('bathrooms')">
+          <h2>Baños:</h2>
         <p *ngIf="casa.ad.ad_details.bathrooms.hasOwnProperty('single')">
             {{casa.ad.ad_details.bathrooms.single.label}}
         </p>
@@ -42,7 +44,8 @@
   </ion-card>
   <ion-card>
       <ion-card-content *ngIf="casa.ad.hasOwnProperty('list_price')">
-          {{ casa.ad.list_price.label }}
+          <h2>Precio:</h2>  
+        {{ casa.ad.list_price.label }}
       </ion-card-content>
   </ion-card>
  
